@@ -39,3 +39,20 @@ yarn test:unit
 ```sh
 yarn lint
 ```
+
+### Use global variable in any component like:
+
+## To use these constants in your components template, you can do the following:
+
+- for simpleString: {{ $constants('simpleString') }}
+- for simpleArray: {{ $constants('simpleArray')[0] }}
+- for simpleObject: {{ $constants('simpleObject').name }}
+
+## To use these constants in your components script:
+
+```
+import { getCurrentInstance } from 'vue'
+const app = getCurrentInstance()
+const constants = app.appContext.config.globalProperties.$constants
+console.log(constants('simpleString'))
+```

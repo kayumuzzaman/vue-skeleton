@@ -37,10 +37,9 @@
     "vitest": "^0.34.2"
   },
   "lint-staged": {
-    "src/**/*.{vue}": [
+    "src/**/*.{vue,js,cjs}": [
       "eslint --fix",
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }

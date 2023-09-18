@@ -5,9 +5,19 @@ import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+
+import { useCounterStore } from '../stores/counter'
+import { storeToRefs } from 'pinia'
+const counterStore = useCounterStore()
+
+const { count, doubleCount } = storeToRefs(counterStore)
+const { increment } = counterStore
 </script>
 
 <template>
+  {{ count }}
+  {{ doubleCount }}
+  <button @click="increment">increment</button>
   <WelcomeItem>
     <template #icon>
       <DocumentationIcon />

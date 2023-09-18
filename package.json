@@ -15,7 +15,8 @@
     "test:unit": "vitest",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "cleanup": "bash ./cleanup.sh"
   },
   "dependencies": {
     "pinia": "^2.1.6",

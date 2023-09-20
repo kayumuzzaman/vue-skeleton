@@ -5,6 +5,13 @@
 </template>
 
 <style>
+.about {
+  line-height: 1.5;
+  max-height: 100vh;
+  text-align: center;
+  margin-top: 2rem;
+}
+
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;

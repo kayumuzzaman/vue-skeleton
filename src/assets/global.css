@@ -22,9 +22,15 @@ body {
     'Helvetica Neue',
     sans-serif;
   font-size: 15px;
+  overflow-y: hidden; 
+  overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  margin: 0 2rem;
 }
 
 .purple {
@@ -56,4 +62,12 @@ button:hover {
 button:active {
   background-color: #1f618d;
   color: #ffffff;
+}
+
+.center-items {
+  line-height: 1.5;
+  max-height: 100vh;
+  text-align: center;
+  align-items: center;
+  margin: 2rem 5rem;
 }

@@ -10,6 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <h2 class="purple">{{ $constants('title') }}</h2>
       <nav>
         <RouterLink to="/">Counter</RouterLink>
+        <RouterLink to="/users">Users</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>

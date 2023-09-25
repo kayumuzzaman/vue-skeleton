@@ -5,12 +5,15 @@ files_to_remove=(
     "./src/assets/base.css"
     "./src/assets/main.css"
     "./src/components/Counter.vue"
+    "./src/views/AboutView.vue"
+    "./src/views/HomeView.vue"
 )
 
 folders_to_remove=(
     "./src/components/__tests__"
     "./src/components/users"
     "./src/stores/counter.js"
+    ""
 )
 
 # Remove files
@@ -32,5 +35,35 @@ for folder in "${folders_to_remove[@]}"; do
         echo "Folder not found: $folder"
     fi
 done
+
+file_path="./src/router/routes.js"
+new_code=$(cat <<'EOF'
+export default [
+    // example of how to define a route
+   // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: HomeView
+  // }
+]
+EOF
+)
+
+# Check if the file exists
+if [ -f "$file_path" ]; then
+    > "$file_path"
+    echo "$new_code" > "$file_path"
+    echo "File cleaned, and new code written."
+else
+    echo "File not found: $file_path"
+fi
+
+file_path_two="./src/App.vue"
+
+if [ -f "$file_path_two" ]; then
+    sed -i '/<nav>/,/<\/nav>/d' "$file_path_two"
+else
+    echo "File not found: $file_path_two"
+fi
 
 echo "Removal process completed."

@@ -3,10 +3,14 @@
 # Define the files and folders you want to remove
 files_to_remove=(
     "./src/assets/base.css"
+    "./src/assets/main.css"
+    "./src/components/Counter.vue"
 )
 
 folders_to_remove=(
     "./src/components/__tests__"
+    "./src/components/users"
+    "./src/stores/counter.js"
 )
 
 # Remove files
